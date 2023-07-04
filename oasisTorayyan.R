@@ -86,7 +86,7 @@ tabela_registros <- tabela_registros |>
   mutate(
     authors = str_replace_all(authors, '\n', '; ') |> str_squish(),
     keywords = keywords |> str_squish()
-  ) |> rownames_to_column() |> rename(key = rowname)
+  ) |> rownames_to_column(var = 'key')
 
 # salva em arquivo .csv
 ## Por algum motivo que eu não sei qual é, o Rayyan não lê o arquivo salvo diretamente do R, eu precisei abrir o arquivo que o R gera no libreoffice, clicar em salvar e então o Rayyan aceita... talvez um problema de codificação.
